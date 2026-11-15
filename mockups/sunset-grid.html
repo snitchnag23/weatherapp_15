@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup - Sunset Grid</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#e6e6e6;color:#222;font-family:Arial,Helvetica,sans-serif}
+.sheet{padding:24px}
+.sheet h1.title{margin:0 0 4px;font-size:1.5rem}
+.sheet p.note{margin:0 0 24px;color:#444}
+.state{margin-bottom:40px}
+.state h2.state-title{margin:0 0 12px;font-size:1.2rem}
+.pair{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+figure{margin:0;flex:none}
+figcaption{font-size:.85rem;color:#444;margin-bottom:6px}
+.frame{container-type:inline-size;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.frame.laptop{width:960px}
+.frame.phone{width:375px}
+
+.frame{background:linear-gradient(160deg,#ffd36e 0%,#ff9a5a 55%,#ff6f7d 100%)}
+.app{padding:24px 16px 32px;color:#3b1f14}
+.app h1{margin:0 0 16px;font-size:1.6rem;text-align:center}
+.search{display:flex;max-width:520px;margin:0 auto 24px}
+.search input{flex:1;min-width:0;padding:12px 14px;border:0;font-size:1rem;background:#fff;color:#3b1f14}
+.search input::placeholder{color:#7a5a4c}
+.search button{padding:12px 20px;border:0;background:#3b1f14;color:#fff;font-size:1rem;font-weight:bold}
+.hint,.msg{max-width:520px;margin:0 auto;padding:16px;background:#fff;text-align:center}
+.hint{background:transparent;font-size:1rem}
+.msg{font-size:1.05rem}
+.loading{font-weight:bold}
+.hero{background:#fff;padding:20px;margin-bottom:12px;text-align:center}
+.place h2{margin:0;font-size:1.4rem}
+.time{margin:4px 0 0;color:#6b4a3c}
+.now{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px}
+.icon{font-size:3.5rem}
+.temp{font-size:4.5rem;font-weight:bold;line-height:1}
+.desc{margin:8px 0 0;font-size:1.2rem}
+.tiles{display:grid;gap:12px}
+.tile{background:#fff;padding:16px;display:flex;flex-direction:column;gap:4px}
+.label{color:#6b4a3c;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}
+.value{font-size:1.6rem;font-weight:bold}
+@container (min-width:640px){
+ .app{padding:48px 64px 64px}
+ .app h1{font-size:2.4rem;margin-bottom:24px}
+ .hero{display:grid;grid-template-columns:1fr auto;grid-template-areas:"place now" "desc now";align-items:center;text-align:left;padding:32px;margin-bottom:16px}
+ .place{grid-area:place}.now{grid-area:now}.desc{grid-area:desc}
+ .tiles{grid-template-columns:repeat(3,1fr);gap:16px}
+ .temp{font-size:6rem}.icon{font-size:5rem}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+<h1 class="title">Mockup: Sunset Grid</h1>
+<p class="note">Warm sunset colors, white sharp tiles, big temperature at the top. Design only: nothing here works yet. All weather values are made up.</p>
+<section class="state"><h2 class="state-title">1. Before searching</h2><div class="pair">
+<figure><figcaption>Laptop size (960 px wide)</figcaption><div class="frame laptop"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><p class="hint">Type a city above and press Search.</p></div></div></figure>
+<figure><figcaption>Phone size (375 px wide)</figcaption><div class="frame phone"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="" readonly aria-label="City name"><button type="button">Search</button></div><p class="hint">Type a city above and press Search.</p></div></div></figure>
+</div></section>
+<section class="state"><h2 class="state-title">2. Loading</h2><div class="pair">
+<figure><figcaption>Laptop size (960 px wide)</figcaption><div class="frame laptop"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="London" readonly aria-label="City name"><button type="button">Search</button></div><p class="msg loading">Loading...</p></div></div></figure>
+<figure><figcaption>Phone size (375 px wide)</figcaption><div class="frame phone"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="London" readonly aria-label="City name"><button type="button">Search</button></div><p class="msg loading">Loading...</p></div></div></figure>
+</div></section>
+<section class="state"><h2 class="state-title">3. Weather result</h2><div class="pair">
+<figure><figcaption>Laptop size (960 px wide)</figcaption><div class="frame laptop"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="London" readonly aria-label="City name"><button type="button">Search</button></div><section class="result"><div class="hero"><div class="place"><h2>London, United Kingdom</h2><p class="time">Sunday, 15 Nov &middot; 14:30</p></div><div class="now"><span class="icon" role="img" aria-label="Partly cloudy">&#9925;</span><span class="temp">24&deg;C</span></div><p class="desc">Partly cloudy</p></div><div class="tiles"><div class="tile"><span class="label">Feels like</span><span class="value">26&deg;C</span></div><div class="tile"><span class="label">Humidity</span><span class="value">58%</span></div><div class="tile"><span class="label">Wind</span><span class="value">14 km/h NW</span></div></div></section></div></div></figure>
+<figure><figcaption>Phone size (375 px wide)</figcaption><div class="frame phone"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="London" readonly aria-label="City name"><button type="button">Search</button></div><section class="result"><div class="hero"><div class="place"><h2>London, United Kingdom</h2><p class="time">Sunday, 15 Nov &middot; 14:30</p></div><div class="now"><span class="icon" role="img" aria-label="Partly cloudy">&#9925;</span><span class="temp">24&deg;C</span></div><p class="desc">Partly cloudy</p></div><div class="tiles"><div class="tile"><span class="label">Feels like</span><span class="value">26&deg;C</span></div><div class="tile"><span class="label">Humidity</span><span class="value">58%</span></div><div class="tile"><span class="label">Wind</span><span class="value">14 km/h NW</span></div></div></section></div></div></figure>
+</div></section>
+<section class="state"><h2 class="state-title">4. City not found</h2><div class="pair">
+<figure><figcaption>Laptop size (960 px wide)</figcaption><div class="frame laptop"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="Londno" readonly aria-label="City name"><button type="button">Search</button></div><p class="msg">&#128269; Sorry, I couldn't find that city. Please check the spelling and try again.</p></div></div></figure>
+<figure><figcaption>Phone size (375 px wide)</figcaption><div class="frame phone"><div class="app"><h1>Weather App</h1><div class="search"><input type="text" placeholder="Type a city name" value="Londno" readonly aria-label="City name"><button type="button">Search</button></div><p class="msg">&#128269; Sorry, I couldn't find that city. Please check the spelling and try again.</p></div></div></figure>
+</div></section>
+</div>
+</body>
+</html>
